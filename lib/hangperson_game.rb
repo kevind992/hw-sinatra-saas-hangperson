@@ -1,6 +1,6 @@
 class HangpersonGame
 
-  attr_accessor :word, :guesses, :wrong_guesses
+  attr_accessor :word, :guesses, :wrong_guesses, :guess
   # add the necessary class methods, attributes, etc. here
   # to make the tests in spec/hangperson_game_spec.rb pass.
 
@@ -13,6 +13,7 @@ class HangpersonGame
     @word = word
     @guesses = ''
     @wrong_guesses = ''
+    @guess = ''
   end
 
   # You can test it by running $ bundle exec irb -I. -r app.rb
@@ -26,5 +27,9 @@ class HangpersonGame
       return http.post(uri, "").body
     }
   end
-
+  
+  def guess(letter)
+    @guesses << letter
+  end
+  
 end
