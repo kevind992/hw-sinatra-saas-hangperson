@@ -49,4 +49,18 @@ class HangpersonGame
     end
     return true
   end
+  # displays the formatted word after guesses have been made
+  def word_with_guesses
+    result = ''
+    @word.split('').each do |char|
+      if @guesses.include? char
+        result << char
+      else
+        result << '-'
+      end
+    end
+    
+    return result
+  end
 end
+
