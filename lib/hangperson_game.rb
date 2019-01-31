@@ -29,7 +29,18 @@ class HangpersonGame
   end
   
   def guess(letter)
-    @guesses << letter
+    
+   # make sure the letter is actually a letter
+    if letter == nil || !(letter.class == String && letter =~ /^[A-z]$/i)
+      raise ArgumentError
+    end
+    
+    # finally handle check and return true
+    if @word.include? letter
+      @guesses << letter
+    else
+      @wrong_guesses << letter
+    end
+    return true
   end
-  
 end
