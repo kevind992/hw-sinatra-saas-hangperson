@@ -52,8 +52,7 @@ class HangpersonApp < Sinatra::Base
         flash[:message] = "Invalid guess."
         
       end
-    rescue ArgumentErro
-    r
+    rescue ArgumentError
       flash[:message] = "Invalid guess."
       
     end
