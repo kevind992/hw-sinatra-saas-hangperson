@@ -49,7 +49,6 @@ class HangpersonApp < Sinatra::Base
       elsif @game.check_win_or_lose == :lose
         redirect '/lose'
       else 
-        flash[:message] = "Invalid guess."
         redirect '/show'
       end
     rescue ArgumentError
